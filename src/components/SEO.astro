@@ -1,0 +1,30 @@
+
+---
+const { title, description } = Astro.props;
+---
+<Fragment slot="seo">
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={Astro.url.href} />
+  <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WROLL",
+    "image": "https://wroll.pl/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dokerska 12",
+      "addressLocality": "Wrocław",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48690110620",
+    "email": "kontakt@wroll.pl",
+    "areaServed": "Wrocław i okolice",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/"
+    ]
+  }, null, 2)}
+  </script>
+</Fragment>

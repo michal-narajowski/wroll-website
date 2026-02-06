@@ -1,0 +1,97 @@
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+
+const title = 'Kontakt – WROLL | Bezpłatny pomiar i wycena';
+const description = 'Skontaktuj się z WROLL. Darmowy pomiar, wycena i konsultacja na terenie Wrocławia. Tel. +48 690 110 620, email: kontakt@wroll.pl';
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Skontaktuj się z nami</h1>
+    <p class="text-lg text-gray-700">Chcesz poznać naszą pełną ofertę? Potrzebujesz porady? Zapraszamy do kontaktu!</p>
+  </div>
+
+  <section class="section">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="mb-6">Formularz kontaktowy</h2>
+        <form name="contact" method="POST" netlify class="space-y-4">
+          <div>
+            <label for="name" class="block font-semibold mb-2 text-gray-900">Imię i nazwisko</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 bg-white text-black" />
+          </div>
+          <div>
+            <label for="email" class="block font-semibold mb-2 text-gray-900">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 bg-white text-black" />
+          </div>
+          <div>
+            <label for="phone" class="block font-semibold mb-2 text-gray-900">Telefon</label>
+            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 bg-white text-black" />
+          </div>
+          <div>
+            <label for="service" class="block font-semibold mb-2 text-gray-900">Interesująca Cię usługa</label>
+            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 bg-white text-black">
+              <option value="">-- Wybierz --</option>
+              <option value="rolety-materialowe">Rolety materiałowe</option>
+              <option value="rolety-dzien-noc">Rolety dzień-noc</option>
+              <option value="zaluzje">Żaluzje</option>
+              <option value="moskitiery">Moskitiery</option>
+              <option value="rolety-zewnetrzne">Rolety zewnętrzne</option>
+              <option value="okna-serwis">Okna i serwis</option>
+              <option value="inne">Inne</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block font-semibold mb-2 text-gray-900">Wiadomość</label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 bg-white text-black"></textarea>
+          </div>
+          <div>
+            <input type="checkbox" id="terms" name="terms" required class="mr-2" />
+            <label for="terms" class="text-sm text-gray-700">Zgadzam się na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi</label>
+          </div>
+          <button type="submit" class="w-full bg-black text-white font-bold py-3 rounded-lg hover:bg-gray-800 transition-colors">
+            Wyślij wiadomość
+          </button>
+        </form>
+      </div>
+
+      <div>
+        <h2 class="mb-6">Informacje kontaktowe</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-black mb-2 flex items-center gap-2">
+              <span class="text-2xl">📍</span> Adres
+            </h3>
+            <p class="text-gray-800">Dokerska 12<br />50-010 Wrocław<br />Polska</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-black mb-2 flex items-center gap-2">
+              <span class="text-2xl">📞</span> Telefon
+            </h3>
+            <p class="text-gray-800"><a href="tel:+48690110620" class="text-black hover:text-gray-700 underline">+48 690 110 620</a></p>
+            <p class="text-sm text-gray-700 mt-2">Pon-Pt: 08:00-17:00<br />Sob-Nd: Niezawarte</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-black mb-2 flex items-center gap-2">
+              <span class="text-2xl">📧</span> Email
+            </h3>
+            <p class="text-gray-800"><a href="mailto:kontakt@wroll.pl" class="text-black hover:text-gray-700 underline">kontakt@wroll.pl</a></p>
+          </div>
+          <div class="bg-gray-200 p-4 rounded-lg border-l-4 border-gray-800">
+            <h3 class="font-semibold text-black mb-2">🎯 Darmowy pomiar</h3>
+            <p class="text-sm text-gray-700">Oferujemy bezpłatny pomiar i wycenę na terenie Wrocławia i okolic. Wystarczy, że się z nami skontaktujesz!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Mapa</h2>
+    <p class="text-gray-700 mb-4">Odwiedź nas na Dokerskiej 12 we Wrocławiu</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.766929087898!2d17.024066!3d51.094236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe8ba5b8e8c71%3A0x9c8c8c8c8c8c8c8c!2sDokerska%2012%2C%2050-010%20Wroc%C5%82aw!5e0!3m2!1spl!2spl!4v1" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+  </section>
+</BaseLayout>

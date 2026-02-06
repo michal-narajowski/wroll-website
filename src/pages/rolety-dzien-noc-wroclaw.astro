@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import ProductServiceSchema from '../components/ProductServiceSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import Gallery from '../components/Gallery.astro';
+
+const title = 'Rolety dzień noc Wrocław — styl i regulacja światła | WROLL';
+const description = 'Rolety dzień-noc we Wrocławiu. Nowoczesne mechanizmy, łatwa regulacja światła, profesjonalny montaż.';
+
+const faqs = [
+  { question: 'Czy rolety dzień-noc pasują do każdego okna?', answer: 'Tak — wykonujemy pomiar i dopasowanie do każdego typu okna.' },
+  { question: 'Jak dbać o rolety dzień-noc?', answer: 'Wystarczy regularne odkurzanie miękką końcówką, czasem delikatne przetarcie wilgotną ściereczką.' }
+];
+
+const originalImage = '/images/product-3.png';
+
+const images = [
+  { webp: '/images/gallery/rolety-dzien-noc-1.jpg', fallback: '/images/gallery/rolety-dzien-noc-1.jpg', alt: 'Rolety dzień-noc - Wzór 1' },
+  { webp: '/images/gallery/rolety-dzien-noc-2.jpg', fallback: '/images/gallery/rolety-dzien-noc-2.jpg', alt: 'Rolety dzień-noc - Regulacja' },
+  { webp: '/images/gallery/rolety-dzien-noc-3.jpg', fallback: '/images/gallery/rolety-dzien-noc-3.jpg', alt: 'Instalacja rolet dzień-noc' }
+];
+
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Rolety dzień‑noc Wrocław</h1>
+    <p class="text-lg text-gray-700 mb-6">{description}</p>
+  </div>
+
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Funkcje i zalety</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Płynna regulacja światła</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Komfort i nowoczesny wygląd</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Łatwy montaż bezinwazyjny</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Popularne w nowoczesnych wnętrzach</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Rolety dzień-noc - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <Gallery images={images} />
+
+  <section class="section">
+    <h2 class="mb-6">Najczęściej zadawane pytania</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+          <p class="text-gray-700">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSchema faqs={faqs} />
+  <ProductServiceSchema name="Rolety dzień‑noc" description={description} images={images.map(i=>i.webp)} priceRange="od 250" />
+</BaseLayout>

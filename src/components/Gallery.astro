@@ -1,0 +1,14 @@
+---
+const { images = [] } = Astro.props;
+---
+<section class="section">
+  <h2>Galeria realizacji</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+    {images.map(img => (
+      <picture class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <source type="image/webp" srcset={img.webp} />
+        <img src={img.fallback} alt={img.alt || 'Realizacja'} loading="lazy" class="w-full h-64 object-cover" />
+      </picture>
+    ))}
+  </div>
+</section>

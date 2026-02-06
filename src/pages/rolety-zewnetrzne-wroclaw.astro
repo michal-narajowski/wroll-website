@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import ProductServiceSchema from '../components/ProductServiceSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import Gallery from '../components/Gallery.astro';
+
+const title = 'Rolety zewnętrzne Wrocław — bezpieczeństwo i izolacja | WROLL';
+const description = 'Rolety zewnętrzne we Wrocławiu: zwiększają izolację termiczną, chronią przed włamaniem i hałasem. Profesjonalny montaż i serwis.';
+
+const faqs = [
+  { question: 'Czy rolety zewnętrzne wpływają na izolację?', answer: 'Tak — poprawiają izolację termiczną i akustyczną budynku, mogą zmniejszyć rachunek za ogrzewanie.' },
+  { question: 'Czy rolety elektroniczne są niezawodne?', answer: 'Tak — używamy sprawdzonych systemów elektromechanicznych z długą gwarancją.' }
+];
+
+const originalImage = '/images/product-2.png';
+
+const images = [
+  { webp: '/images/gallery/rolety-zewnetrzne-1.jpg', fallback: '/images/gallery/rolety-zewnetrzne-1.jpg', alt: 'Rolety zewnętrzne - Letnie' },
+  { webp: '/images/gallery/rolety-zewnetrzne-2.jpg', fallback: '/images/gallery/rolety-zewnetrzne-2.jpg', alt: 'Rolety zewnętrzne - Zimowe' },
+  { webp: '/images/gallery/rolety-zewnetrzne-3.jpg', fallback: '/images/gallery/rolety-zewnetrzne-3.jpg', alt: 'Instalacja rolet zewnętrznych' }
+];
+
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Rolety zewnętrzne Wrocław</h1>
+    <p class="text-lg text-gray-700 mb-6">{description}</p>
+  </div>
+
+  <section class="section">
+    <h2>Zastosowania i korzyści</h2>
+    <ul class="space-y-3 mt-4">
+      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Termoizolacja i oszczędność energii</li>
+      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Ochrona antywłamaniowa</li>
+      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Redukcja hałasu znacznie się zmniejsza</li>
+      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Przesłanianie całkowite, pełna prywatność</li>
+      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Sterowanie elektroniczne, czasowe, manuelle</li>
+    </ul>
+  </section>
+
+  <Gallery images={images} />
+
+  <section class="section">
+    <h2 class="mb-6">Najczęściej zadawane pytania</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+          <p class="text-gray-700">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSchema faqs={faqs} />
+  <ProductServiceSchema name="Rolety zewnętrzne" description={description} images={images.map(i=>i.webp)} priceRange="od 900" />
+</BaseLayout>

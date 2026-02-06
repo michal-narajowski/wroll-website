@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import ProductServiceSchema from '../components/ProductServiceSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import Gallery from '../components/Gallery.astro';
+
+const title = 'Moskitiery Wrocław — ochrona przed owadami | WROLL';
+const description = 'Moskitiery na wymiar we Wrocławiu. Drzwiowe, okienne, plisowane — skuteczna ochrona przed owadami i pyłkami.';
+
+const faqs = [
+  { question: 'Czy moskitiery są trudne w utrzymaniu?', answer: 'Nie — większość modeli czyści się łatwo, a my oferujemy instrukcję pielęgnacji.' },
+  { question: 'Czy moskitiery zmniejszają ilość światła?', answer: 'Minimalne — siatka przepuszcza prawie całe światło, znacznie poprawiając przepływ powietrza.' }
+];
+
+const originalImage = '/images/roto-windows.jpg';
+
+const images = [
+  { webp: '/images/gallery/moskitiery-1.jpg', fallback: '/images/gallery/moskitiery-1.jpg', alt: 'Moskitiery okienne' },
+  { webp: '/images/gallery/moskitiery-2.jpg', fallback: '/images/gallery/moskitiery-2.jpg', alt: 'Moskitiery drzwiowe' },
+  { webp: '/images/gallery/moskitiery-3.jpg', fallback: '/images/gallery/moskitiery-3.jpg', alt: 'Moskitiery plisowane' }
+];
+
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Moskitiery Wrocław</h1>
+    <p class="text-lg text-gray-700 mb-6">{description}</p>
+  </div>
+
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Dlaczego moskitiery WROLL?</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Moskitiery okienne na wymiar</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Moskitiery drzwiowe z roletami automatycznym</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Moskitiery plisowane na dachowe okna</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Moskitiery drzwiowe standardowe</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Moskitiery - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <Gallery images={images} />
+
+  <section class="section">
+    <h2 class="mb-6">Najczęściej zadawane pytania</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+          <p class="text-gray-700">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSchema faqs={faqs} />
+  <ProductServiceSchema name="Moskitiery" description={description} images={images.map(i=>i.webp)} priceRange="od 120" />
+</BaseLayout>

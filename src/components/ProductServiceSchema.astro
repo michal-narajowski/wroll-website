@@ -1,0 +1,50 @@
+---
+const { name, description, images = [], sku, priceRange, url = Astro.url.href } = Astro.props;
+---
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "WROLL",
+      "image": images,
+      "@id": url,
+      "url": url,
+      "telephone": "+48690110620",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dokerska 12",
+        "addressLocality": "Wrocław",
+        "addressCountry": "PL"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": name,
+      "description": description,
+      "image": images,
+      "sku": sku || undefined,
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "PLN",
+          "price": priceRange || undefined
+        },
+        "availability": "https://schema.org/InStock",
+        "url": url
+      }
+    },
+    {
+      "@type": "Service",
+      "name": name,
+      "description": description,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "WROLL"
+      }
+    }
+  ]
+}, null, 2)}
+</script>
