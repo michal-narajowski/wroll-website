@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import ProductServiceSchema from '../components/ProductServiceSchema.astro';
 import FAQSchema from '../components/FAQSchema.astro';
 import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
 
 const title = 'Rolety zewnętrzne Wrocław — bezpieczeństwo i izolacja | WROLL';
 const description = 'Rolety zewnętrzne we Wrocławiu: zwiększają izolację termiczną, chronią przed włamaniem i hałasem. Profesjonalny montaż i serwis.';
@@ -13,12 +14,12 @@ const faqs = [
   { question: 'Czy rolety elektroniczne są niezawodne?', answer: 'Tak — używamy sprawdzonych systemów elektromechanicznych z długą gwarancją.' }
 ];
 
-const originalImage = '/images/product-2.png';
+const originalImage = getUrl('/images/product-2.png');
 
 const images = [
-  { webp: '/images/gallery/rolety-zewnetrzne-1.jpg', fallback: '/images/gallery/rolety-zewnetrzne-1.jpg', alt: 'Rolety zewnętrzne - Letnie' },
-  { webp: '/images/gallery/rolety-zewnetrzne-2.jpg', fallback: '/images/gallery/rolety-zewnetrzne-2.jpg', alt: 'Rolety zewnętrzne - Zimowe' },
-  { webp: '/images/gallery/rolety-zewnetrzne-3.jpg', fallback: '/images/gallery/rolety-zewnetrzne-3.jpg', alt: 'Instalacja rolet zewnętrznych' }
+  { webp: getUrl('/images/gallery/rolety-zewnetrzne-1.jpg'), fallback: getUrl('/images/gallery/rolety-zewnetrzne-1.jpg'), alt: 'Rolety zewnętrzne - Letnie' },
+  { webp: getUrl('/images/gallery/rolety-zewnetrzne-2.jpg'), fallback: getUrl('/images/gallery/rolety-zewnetrzne-2.jpg'), alt: 'Rolety zewnętrzne - Zimowe' },
+  { webp: getUrl('/images/gallery/rolety-zewnetrzne-3.jpg'), fallback: getUrl('/images/gallery/rolety-zewnetrzne-3.jpg'), alt: 'Instalacja rolet zewnętrznych' }
 ];
 
 ---

@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import ProductServiceSchema from '../components/ProductServiceSchema.astro';
 import FAQSchema from '../components/FAQSchema.astro';
 import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
 
 const title = 'Żaluzje Wrocław — aluminiowe, drewniane, pionowe | WROLL';
 const description = 'Żaluzje we Wrocławiu: aluminiowe, drewniane i pionowe. Dopasujemy rozwiązanie do Twojego wnętrza, oferujemy montaż i serwis.';
@@ -13,12 +14,12 @@ const faqs = [
   { question: 'Czy żaluzje są trwałe?', answer: 'Tak — używamy materiałów najwyższej jakości, które wytrzymują lata intensywnego użytku.' }
 ];
 
-const originalImage = '/images/product-5.png';
+const originalImage = getUrl('/images/product-5.png');
 
 const images = [
-  { webp: '/images/gallery/zaluzje-1.jpg', fallback: '/images/gallery/zaluzje-1.jpg', alt: 'Żaluzje aluminiowe' },
-  { webp: '/images/gallery/zaluzje-2.jpg', fallback: '/images/gallery/zaluzje-2.jpg', alt: 'Żaluzje drewniane' },
-  { webp: '/images/gallery/zaluzje-3.jpg', fallback: '/images/gallery/zaluzje-3.jpg', alt: 'Instalacja Żaluzji' }
+  { webp: getUrl('/images/gallery/zaluzje-1.jpg'), fallback: getUrl('/images/gallery/zaluzje-1.jpg'), alt: 'Żaluzje aluminiowe' },
+  { webp: getUrl('/images/gallery/zaluzje-2.jpg'), fallback: getUrl('/images/gallery/zaluzje-2.jpg'), alt: 'Żaluzje drewniane' },
+  { webp: getUrl('/images/gallery/zaluzje-3.jpg'), fallback: getUrl('/images/gallery/zaluzje-3.jpg'), alt: 'Instalacja Żaluzji' }
 ];
 
 ---

@@ -2,6 +2,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
+import { getUrl } from '../utils/url';
 ---
 <BaseLayout>
   <SEO 
@@ -17,27 +18,27 @@ import SEO from '../components/SEO.astro';
   <section class="section">
     <h2>Nasze usługi — wybierz kategorię</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-      <a href="/rolety-materialowe-wroclaw" class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+      <a href={getUrl('/rolety-materialowe-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Rolety materiałowe</h3>
         <p class="text-gray-800 text-sm">Eleganckie tkaniny, zaciemnienie, montaż we Wrocławiu</p>
       </a>
-      <a href="/rolety-dzien-noc-wroclaw" class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+      <a href={getUrl('/rolety-dzien-noc-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Rolety dzień‑noc</h3>
         <p class="text-gray-800 text-sm">Precyzyjna regulacja światła, nowoczesne rozwiązania</p>
       </a>
-      <a href="/zaluzje-wroclaw" class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+      <a href={getUrl('/zaluzje-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Żaluzje</h3>
         <p class="text-gray-800 text-sm">Aluminiowe, drewniane i pionowe na wymiar</p>
       </a>
-      <a href="/moskitiery-wroclaw" class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+      <a href={getUrl('/moskitiery-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Moskitiery</h3>
         <p class="text-gray-800 text-sm">Skuteczna ochrona przed owadami, różne warianty</p>
       </a>
-      <a href="/rolety-zewnetrzne-wroclaw" class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+      <a href={getUrl('/rolety-zewnetrzne-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Rolety zewnętrzne</h3>
         <p class="text-gray-800 text-sm">Termoizolacja, bezpieczeństwo, redukcja hałasu</p>
       </a>
-      <a href="/kontakt" class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+      <a href={getUrl('/kontakt')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Okna i serwis</h3>
         <p class="text-gray-800 text-sm">Pomiary, naprawy, wymiana szyb, przeglądy</p>
       </a>
@@ -58,6 +59,6 @@ import SEO from '../components/SEO.astro';
   <section class="section bg-blue-50 p-6 rounded-lg">
     <h2 class="text-primary">Skontaktuj się z nami</h2>
     <p class="text-gray-700 mt-4 mb-4">Chcesz wiedzieć więcej? Czeka Cię darmowy pomiar i wycena bez zobowiązań.</p>
-    <a href="/kontakt" class="btn">Zamów bezpłatny pomiar →</a>
+    <a href={getUrl('/kontakt')} class="btn">Zamów bezpłatny pomiar →</a>
   </section>
 </BaseLayout>

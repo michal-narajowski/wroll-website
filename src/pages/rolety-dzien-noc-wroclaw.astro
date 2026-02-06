@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import ProductServiceSchema from '../components/ProductServiceSchema.astro';
 import FAQSchema from '../components/FAQSchema.astro';
 import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
 
 const title = 'Rolety dzień noc Wrocław — styl i regulacja światła | WROLL';
 const description = 'Rolety dzień-noc we Wrocławiu. Nowoczesne mechanizmy, łatwa regulacja światła, profesjonalny montaż.';
@@ -13,12 +14,12 @@ const faqs = [
   { question: 'Jak dbać o rolety dzień-noc?', answer: 'Wystarczy regularne odkurzanie miękką końcówką, czasem delikatne przetarcie wilgotną ściereczką.' }
 ];
 
-const originalImage = '/images/product-3.png';
+const originalImage = getUrl('/images/product-3.png');
 
 const images = [
-  { webp: '/images/gallery/rolety-dzien-noc-1.jpg', fallback: '/images/gallery/rolety-dzien-noc-1.jpg', alt: 'Rolety dzień-noc - Wzór 1' },
-  { webp: '/images/gallery/rolety-dzien-noc-2.jpg', fallback: '/images/gallery/rolety-dzien-noc-2.jpg', alt: 'Rolety dzień-noc - Regulacja' },
-  { webp: '/images/gallery/rolety-dzien-noc-3.jpg', fallback: '/images/gallery/rolety-dzien-noc-3.jpg', alt: 'Instalacja rolet dzień-noc' }
+  { webp: getUrl('/images/gallery/rolety-dzien-noc-1.jpg'), fallback: getUrl('/images/gallery/rolety-dzien-noc-1.jpg'), alt: 'Rolety dzień-noc - Wzór 1' },
+  { webp: getUrl('/images/gallery/rolety-dzien-noc-2.jpg'), fallback: getUrl('/images/gallery/rolety-dzien-noc-2.jpg'), alt: 'Rolety dzień-noc - Regulacja' },
+  { webp: getUrl('/images/gallery/rolety-dzien-noc-3.jpg'), fallback: getUrl('/images/gallery/rolety-dzien-noc-3.jpg'), alt: 'Instalacja rolet dzień-noc' }
 ];
 
 ---

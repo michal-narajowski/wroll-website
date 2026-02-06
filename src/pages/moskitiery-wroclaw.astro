@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import ProductServiceSchema from '../components/ProductServiceSchema.astro';
 import FAQSchema from '../components/FAQSchema.astro';
 import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
 
 const title = 'Moskitiery Wrocław — ochrona przed owadami | WROLL';
 const description = 'Moskitiery na wymiar we Wrocławiu. Drzwiowe, okienne, plisowane — skuteczna ochrona przed owadami i pyłkami.';
@@ -13,12 +14,12 @@ const faqs = [
   { question: 'Czy moskitiery zmniejszają ilość światła?', answer: 'Minimalne — siatka przepuszcza prawie całe światło, znacznie poprawiając przepływ powietrza.' }
 ];
 
-const originalImage = '/images/roto-windows.jpg';
+const originalImage = getUrl('/images/roto-windows.jpg');
 
 const images = [
-  { webp: '/images/gallery/moskitiery-1.jpg', fallback: '/images/gallery/moskitiery-1.jpg', alt: 'Moskitiery okienne' },
-  { webp: '/images/gallery/moskitiery-2.jpg', fallback: '/images/gallery/moskitiery-2.jpg', alt: 'Moskitiery drzwiowe' },
-  { webp: '/images/gallery/moskitiery-3.jpg', fallback: '/images/gallery/moskitiery-3.jpg', alt: 'Moskitiery plisowane' }
+  { webp: getUrl('/images/gallery/moskitiery-1.jpg'), fallback: getUrl('/images/gallery/moskitiery-1.jpg'), alt: 'Moskitiery okienne' },
+  { webp: getUrl('/images/gallery/moskitiery-2.jpg'), fallback: getUrl('/images/gallery/moskitiery-2.jpg'), alt: 'Moskitiery drzwiowe' },
+  { webp: getUrl('/images/gallery/moskitiery-3.jpg'), fallback: getUrl('/images/gallery/moskitiery-3.jpg'), alt: 'Moskitiery plisowane' }
 ];
 
 ---
