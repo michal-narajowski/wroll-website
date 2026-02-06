@@ -2,19 +2,19 @@
 import { getUrl } from '../utils/url';
 ---
 <header class="bg-white border-b border-gray-300 sticky top-0 shadow-sm">
-  <nav class="container-wide flex items-center justify-between py-4">
-    <a href={getUrl('/')} class="flex items-center gap-2 no-underline">
+  <nav class="container-wide flex items-center justify-between py-4 gap-4">
+    <a href={getUrl('/')} class="flex items-center gap-2 no-underline flex-shrink-0">
       <img src={getUrl('/images/logo.jpg')} alt="WROLL logo" class="h-10 w-auto" />
       <span class="text-2xl font-bold text-black">WROLL</span>
     </a>
-    <div class="flex gap-8 flex-wrap items-center">
-      <a href={getUrl('/oferta')} class="text-black hover:text-gray-700 no-underline font-medium">Oferta</a>
-      <div class="flex gap-6">
+    <div class="flex gap-4 md:gap-8 items-center flex-wrap justify-end">
+      <a href={getUrl('/oferta')} class="text-black hover:text-gray-700 no-underline font-medium text-sm md:text-base">Oferta</a>
+      <div class="hidden md:flex gap-6">
         <a href={getUrl('/oferta') + '#rolety'} class="text-black hover:text-gray-700 no-underline font-medium">Rolety</a>
         <a href={getUrl('/oferta') + '#zaluzje'} class="text-black hover:text-gray-700 no-underline font-medium">Żaluzje</a>
         <a href={getUrl('/oferta') + '#moskitiery'} class="text-black hover:text-gray-700 no-underline font-medium">Moskitiery</a>
       </div>
-      <a href={getUrl('/kontakt')} class="text-black hover:text-gray-700 no-underline font-medium">Kontakt</a>
+      <a href={getUrl('/kontakt')} class="text-black hover:text-gray-700 no-underline font-medium text-sm md:text-base">Kontakt</a>
     </div>
   </nav>
 </header>
