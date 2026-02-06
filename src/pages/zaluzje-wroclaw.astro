@@ -14,7 +14,7 @@ const faqs = [
   { question: 'Czy żaluzje są trwałe?', answer: 'Tak — używamy materiałów najwyższej jakości, które wytrzymują lata intensywnego użytku.' }
 ];
 
-const originalImage = getUrl('/images/product-5.png');
+const originalImage = getUrl('/images/product-2.png');
 
 const images = [
   { webp: getUrl('/images/gallery/zaluzje-1.jpg'), fallback: getUrl('/images/gallery/zaluzje-1.jpg'), alt: 'Żaluzje aluminiowe' },
@@ -32,6 +32,23 @@ const images = [
   </div>
 
   <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Dlaczego żaluzje lamelowe?</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Uniwersalne — pasują do każdego stylu wnętrza</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Łatwe czyszczenie — wystarczy wilgotna ścierka</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Trwałe materiały — wytrzymują lata użytku</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Precyjna regulacja światła — pełna kontrola</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Żaluzje lamelowe - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <h2>Typy żaluzji</h2>
     <ul class="space-y-3 mt-4">
       <li class="flex gap-3"><span class="text-black font-bold">✓</span> Żaluzje aluminiowe cienkie i grube</li>
@@ -39,6 +56,12 @@ const images = [
       <li class="flex gap-3"><span class="text-black font-bold">✓</span> Żaluzje pionowe do dużych przeszkleń</li>
       <li class="flex gap-3"><span class="text-black font-bold">✓</span> Żaluzje plisowane i składane</li>
     </ul>
+  </section>
+
+  <section class="section">
+    <h2>Nasza oferta</h2>
+    <p class="text-gray-700 mb-6">Produkcja i montaż żaluzji na wymiar — do mieszkań, biur i obiektów użyteczności publicznej. Oferujemy naprawy, wymianę lamel i pełny serwis. Każda żaluzja jest dopasowana indywidualnie do wymiarów okna.</p>
+    <a href={getUrl('/kontakt')} class="btn">Zamów bezpłatny pomiar</a>
   </section>
 
   <Gallery images={images} />

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import ProductServiceSchema from '../components/ProductServiceSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
+
+const title = 'Żaluzje plisowane Wrocław — nowoczesne rozwiązanie | WROLL';
+const description = 'Żaluzje plisowane we Wrocławiu. Nowoczesne, funkcjonalne i eleganckie: duet, jednolite, kaskadowe. Montaż i serwis WROLL.';
+
+const faqs = [
+  { question: 'Jakie są zalety żaluzji plisowanych?', answer: 'Żaluzje plisowane łagodzą światło, izolują termicznie, zajmują mało miejsca, nowoczesny wygląd i łatwe czyszczenie.' },
+  { question: 'Czy żaluzje plisowane są trwałe?', answer: 'Tak — materiały wysokiej jakości i precyzyjny montaż gwarantują wieloletnią trwałość bez problemów.' }
+];
+
+const originalImage = getUrl('/images/product-4.png');
+
+const images = [
+  { webp: getUrl('/images/gallery/zaluzje-plisowane-1.jpg'), fallback: getUrl('/images/gallery/zaluzje-plisowane-1.jpg'), alt: 'Żaluzje plisowane - Duet' },
+  { webp: getUrl('/images/gallery/zaluzje-plisowane-2.jpg'), fallback: getUrl('/images/gallery/zaluzje-plisowane-2.jpg'), alt: 'Żaluzje plisowane - Jednolite' },
+  { webp: getUrl('/images/gallery/zaluzje-plisowane-3.jpg'), fallback: getUrl('/images/gallery/zaluzje-plisowane-3.jpg'), alt: 'Instalacja żaluzji plisowanych' }
+];
+
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Żaluzje plisowane Wrocław</h1>
+    <p class="text-lg text-gray-700 mb-6">{description}</p>
+  </div>
+
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Dlaczego żaluzje plisowane?</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Nowoczesny design — pasują do każdego wnętrza</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Termoizolacja — zmniejszają straty ciepła</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Cichy i gładki mechanizm — przyjemne w użytkowaniu</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Kompaktowe — nie zajmują dużo miejsca</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Żaluzje plisowane - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Rodzaje żaluzji plisowanych</h2>
+    <p class="text-gray-700 mb-6">Oferujemy najnowsze systemy żaluzji plisowanych dostępne na rynku:</p>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Żaluzje duet</h3>
+        <p class="text-sm text-gray-700">Dwie warstwy materiału dla zaawansowanej kontroli światła i izolacji termicznej.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Żaluzje jednolite</h3>
+        <p class="text-sm text-gray-700">Najprostsza forma — elegancka i funkcjonalna dla każdej wielkości okna.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Żaluzje kaskadowe</h3>
+        <p class="text-sm text-gray-700">Doskonałe dla dużych okien i drzwi — nowoczesny, teksturowany wygląd.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Rolex z motorem</h3>
+        <p class="text-sm text-gray-700">Sterowanie elektryczne — wygoda i nowoczesność w jednym.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Nasza oferta</h2>
+    <p class="text-gray-700 mb-6">Produkcja i montaż żaluzji plisowanych na wymiar — do mieszkań, biur i obiektów użyteczności publicznej. Oferujemy naprawy i serwis. Każda żaluzja jest dopasowana indywidualnie do wymiarów okna.</p>
+    <a href={getUrl('/kontakt')} class="btn">Zamów bezpłatny pomiar</a>
+  </section>
+
+  <Gallery images={images} />
+
+  <section class="section">
+    <h2 class="mb-6">Najczęściej zadawane pytania</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+          <p class="text-gray-700">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSchema faqs={faqs} />
+  <ProductServiceSchema name="Żaluzje plisowane" description={description} images={images.map(i=>i.webp)} priceRange="od 180" />
+</BaseLayout>

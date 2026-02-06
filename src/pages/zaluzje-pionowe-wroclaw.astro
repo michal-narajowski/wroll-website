@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import ProductServiceSchema from '../components/ProductServiceSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
+
+const title = 'Żaluzje pionowe Wrocław — do dużych okien | WROLL';
+const description = 'Żaluzje pionowe we Wrocławiu. Idealne do dużych okien, przeszkleń i drzwi. Funkcjonalne, eleganckie, łatwe do czyszczenia. Montaż WROLL.';
+
+const faqs = [
+  { question: 'Do jakich okien nadają się żaluzje pionowe?', answer: 'Żaluzje pionowe są idealne do dużych okien, drzwi przesuwnych (tarasowych) i przeszkleń — tam, gdzie żaluzje poziome są mniej praktyczne.' },
+  { question: 'Jak łatwo się czyszczy żaluzje pionowe?', answer: 'Bardzo łatwo — lamele można czyścić na suchо lub wilgotną szmatką, bez konieczności zdejmowania całej żaluzji.' }
+];
+
+const originalImage = getUrl('/images/product-6.png');
+
+const images = [
+  { webp: getUrl('/images/gallery/zaluzje-pionowe-1.jpg'), fallback: getUrl('/images/gallery/zaluzje-pionowe-1.jpg'), alt: 'Żaluzje pionowe - Do dużych okien' },
+  { webp: getUrl('/images/gallery/zaluzje-pionowe-2.jpg'), fallback: getUrl('/images/gallery/zaluzje-pionowe-2.jpg'), alt: 'Żaluzje pionowe - Do drzwi tarasowych' },
+  { webp: getUrl('/images/gallery/zaluzje-pionowe-3.jpg'), fallback: getUrl('/images/gallery/zaluzje-pionowe-3.jpg'), alt: 'Instalacja żaluzji pionowych' }
+];
+
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Żaluzje pionowe Wrocław</h1>
+    <p class="text-lg text-gray-700 mb-6">{description}</p>
+  </div>
+
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Dlaczego żaluzje pionowe?</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Doskonałe do dużych okien i przeszkleń</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Łatwa obsługa — pojedynczy chwyt kontroluje wszystkie lamele</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Łatwe czyszczenie — nie zbiera się kurz jak w żaluzjach poziomych</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Nowoczesny wygląd — idealne do minimalistycznych wnętrz</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Żaluzje pionowe - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Zastosowania żaluzji pionowych</h2>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Drzwi tarasowe</h3>
+        <p class="text-sm text-gray-700">Idealne rozwiązanie dla przesuwnych drzwi wychodzących na taras lub balkon.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Duże okna</h3>
+        <p class="text-sm text-gray-700">Świetnie sprawdzają się w oknach panoramicznych i przeszkleń biurowych.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Biura i sale konferencyjne</h3>
+        <p class="text-sm text-gray-700">Profesjonalny wygląd, funkcjonalność i łatwość obsługi dla miejsc pracy.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Hotele i restauracje</h3>
+        <p class="text-sm text-gray-700">Eleganckie rozwiązanie do zaciemniania i dekoracji wnętrz komercyjnych.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Nasze usługi</h2>
+    <p class="text-gray-700 mb-6">Produkcja i montaż żaluzji pionowych na wymiar — do mieszkań, biur, hoteli i obiektów użyteczności publicznej. Oferujemy naprawy, wymianę lamel i pełny serwis. Każda żaluzja jest dopasowana indywidualnie.</p>
+    <a href={getUrl('/kontakt')} class="btn">Zamów bezpłatny pomiar</a>
+  </section>
+
+  <Gallery images={images} />
+
+  <section class="section">
+    <h2 class="mb-6">Najczęściej zadawane pytania</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+          <p class="text-gray-700">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSchema faqs={faqs} />
+  <ProductServiceSchema name="Żaluzje pionowe" description={description} images={images.map(i=>i.webp)} priceRange="od 160" />
+</BaseLayout>

@@ -7,13 +7,13 @@ import { getUrl } from '../utils/url';
       <img src={getUrl('/images/logo.jpg')} alt="WROLL logo" class="h-10 w-auto" />
       <span class="text-2xl font-bold text-black">WROLL</span>
     </a>
-    <div class="flex gap-6 flex-wrap">
+    <div class="flex gap-8 flex-wrap items-center">
       <a href={getUrl('/oferta')} class="text-black hover:text-gray-700 no-underline font-medium">Oferta</a>
-      <a href={getUrl('/rolety-materialowe-wroclaw')} class="text-black hover:text-gray-700 no-underline font-medium">Rolety materiałowe</a>
-      <a href={getUrl('/rolety-dzien-noc-wroclaw')} class="text-black hover:text-gray-700 no-underline font-medium">Rolety dzień‑noc</a>
-      <a href={getUrl('/zaluzje-wroclaw')} class="text-black hover:text-gray-700 no-underline font-medium">Żaluzje</a>
-      <a href={getUrl('/moskitiery-wroclaw')} class="text-black hover:text-gray-700 no-underline font-medium">Moskitiery</a>
-      <a href={getUrl('/rolety-zewnetrzne-wroclaw')} class="text-black hover:text-gray-700 no-underline font-medium">Rolety zewnętrzne</a>
+      <div class="flex gap-6">
+        <a href={getUrl('/oferta') + '#rolety'} class="text-black hover:text-gray-700 no-underline font-medium">Rolety</a>
+        <a href={getUrl('/oferta') + '#zaluzje'} class="text-black hover:text-gray-700 no-underline font-medium">Żaluzje</a>
+        <a href={getUrl('/oferta') + '#moskitiery'} class="text-black hover:text-gray-700 no-underline font-medium">Moskitiery</a>
+      </div>
       <a href={getUrl('/kontakt')} class="text-black hover:text-gray-700 no-underline font-medium">Kontakt</a>
     </div>
   </nav>

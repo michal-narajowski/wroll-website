@@ -14,7 +14,7 @@ const faqs = [
   { question: 'Czy rolety elektroniczne są niezawodne?', answer: 'Tak — używamy sprawdzonych systemów elektromechanicznych z długą gwarancją.' }
 ];
 
-const originalImage = getUrl('/images/product-2.png');
+const originalImage = getUrl('/images/product-8.png');
 
 const images = [
   { webp: getUrl('/images/gallery/rolety-zewnetrzne-1.jpg'), fallback: getUrl('/images/gallery/rolety-zewnetrzne-1.jpg'), alt: 'Rolety zewnętrzne - Letnie' },
@@ -32,14 +32,48 @@ const images = [
   </div>
 
   <section class="section">
-    <h2>Zastosowania i korzyści</h2>
-    <ul class="space-y-3 mt-4">
-      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Termoizolacja i oszczędność energii</li>
-      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Ochrona antywłamaniowa</li>
-      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Redukcja hałasu znacznie się zmniejsza</li>
-      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Przesłanianie całkowite, pełna prywatność</li>
-      <li class="flex gap-3"><span class="text-black font-bold">✓</span> Sterowanie elektroniczne, czasowe, manuelle</li>
-    </ul>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Dlaczego rolety zewnętrzne?</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Termoizolacja — zmniejszają straty ciepła zimą</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Ochrona antywłamaniowa — wzmacniają bezpieczeństwo</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Redukcja hałasu — znacznie zmniejszają hałas z ulicy</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Oszczędność energii — mogą zmniejszyć rachunki za ogrzewanie</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Rolety zewnętrzne - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Rodzaje rolet zewnętrznych</h2>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Rolety zwijane</h3>
+        <p class="text-sm text-gray-700">Rozwiązanie klasyczne — proste, niezawodne i uniwersalne. Idealne do większości okien.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Rolety kasetowe</h3>
+        <p class="text-sm text-gray-700">Ukrywają rolkę w masywie — estetyczne i dyskretne. Doskonały wygląd od wewnątrz i na zewnątrz.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Elektroniczne</h3>
+        <p class="text-sm text-gray-700">Sterowanie przyciskami lub na odległość. Komfort i wygoda w codziennym użytku.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Manuelle</h3>
+        <p class="text-sm text-gray-700">Niezawodne i tanie — obsług ręcznie za pomocą korby lub łańcuszka. Zawsze gotowe do użytku.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Nasza oferta</h2>
+    <p class="text-gray-700 mb-6">Produkcja i montaż rolet zewnętrznych na wymiar — do domów, biur i obiektów komercyjnych. Oferujemy naprawy, serwis elektromechaniczny i pełną gwarancję. Każda roleta jest dokładnie dopasowana do wymiarów okna.</p>
+    <a href={getUrl('/kontakt')} class="btn">Zamów bezpłatny pomiar</a>
   </section>
 
   <Gallery images={images} />

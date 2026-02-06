@@ -15,32 +15,76 @@ import { getUrl } from '../utils/url';
     <p class="text-lg text-gray-700">Pełna gama rozwiązań zaciemniających i ochronnych dla okien i drzwi.</p>
   </div>
 
-  <section class="section">
-    <h2>Nasze usługi — wybierz kategorię</h2>
+  <section class="section" id="rolety">
+    <div class="flex items-center gap-8 mb-8">
+      <div class="flex-1">
+        <h2>Rolety</h2>
+        <p class="text-gray-700 mt-2">Szeroki wybór rolet dla każdego okna: nowoczesne dzień-noc, eleganckie materiałowe, rzymskie, zewnętrzne.</p>
+      </div>
+      <div class="hidden md:flex md:items-center md:justify-center w-48 h-48 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden shadow-md">
+        <img src={getUrl('/images/product-1.png')} alt="Rolety" class="w-full h-full object-cover" />
+      </div>
+    </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-      <a href={getUrl('/rolety-materialowe-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
-        <h3 class="text-lg font-semibold text-black mb-2">Rolety materiałowe</h3>
-        <p class="text-gray-800 text-sm">Eleganckie tkaniny, zaciemnienie, montaż we Wrocławiu</p>
-      </a>
       <a href={getUrl('/rolety-dzien-noc-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Rolety dzień‑noc</h3>
         <p class="text-gray-800 text-sm">Precyzyjna regulacja światła, nowoczesne rozwiązania</p>
       </a>
-      <a href={getUrl('/zaluzje-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
-        <h3 class="text-lg font-semibold text-black mb-2">Żaluzje</h3>
-        <p class="text-gray-800 text-sm">Aluminiowe, drewniane i pionowe na wymiar</p>
+      <a href={getUrl('/rolety-materialowe-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+        <h3 class="text-lg font-semibold text-black mb-2">Rolety materiałowe</h3>
+        <p class="text-gray-800 text-sm">Eleganckie tkaniny, zaciemnienie i funkcjonalność</p>
       </a>
-      <a href={getUrl('/moskitiery-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
-        <h3 class="text-lg font-semibold text-black mb-2">Moskitiery</h3>
-        <p class="text-gray-800 text-sm">Skuteczna ochrona przed owadami, różne warianty</p>
+      <a href={getUrl('/rolety-rzymskie-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+        <h3 class="text-lg font-semibold text-black mb-2">Rolety rzymskie</h3>
+        <p class="text-gray-800 text-sm">Elegancka klasyka do każdego wnętrza</p>
       </a>
       <a href={getUrl('/rolety-zewnetrzne-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
         <h3 class="text-lg font-semibold text-black mb-2">Rolety zewnętrzne</h3>
         <p class="text-gray-800 text-sm">Termoizolacja, bezpieczeństwo, redukcja hałasu</p>
       </a>
-      <a href={getUrl('/kontakt')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
-        <h3 class="text-lg font-semibold text-black mb-2">Okna i serwis</h3>
-        <p class="text-gray-800 text-sm">Pomiary, naprawy, wymiana szyb, przeglądy</p>
+    </div>
+  </section>
+
+  <section class="section" id="zaluzje">
+    <div class="flex items-center gap-8 mb-8">
+      <div class="flex-1">
+        <h2>Żaluzje</h2>
+        <p class="text-gray-700 mt-2">Żaluzje lamelowe, plisowane i pionowe na wymiar. Uniwersalne rozwiązanie dla każdego wnętrza.</p>
+      </div>
+      <div class="hidden md:flex md:items-center md:justify-center w-48 h-48 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden shadow-md">
+        <img src={getUrl('/images/product-2.png')} alt="Żaluzje" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      <a href={getUrl('/zaluzje-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+        <h3 class="text-lg font-semibold text-black mb-2">Żaluzje lamelowe</h3>
+        <p class="text-gray-800 text-sm">Aluminiowe i drewniane na wymiar</p>
+      </a>
+      <a href={getUrl('/zaluzje-plisowane-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+        <h3 class="text-lg font-semibold text-black mb-2">Żaluzje plisowane</h3>
+        <p class="text-gray-800 text-sm">Nowoczesne i funkcjonalne rozwiązanie</p>
+      </a>
+      <a href={getUrl('/zaluzje-pionowe-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+        <h3 class="text-lg font-semibold text-black mb-2">Żaluzje pionowe</h3>
+        <p class="text-gray-800 text-sm">Idealne do dużych okien i drzwi tarasowych</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="moskitiery">
+    <div class="flex items-center gap-8 mb-8">
+      <div class="flex-1">
+        <h2>Moskitiery</h2>
+        <p class="text-gray-700 mt-2">Moskitiery ramkowe i roletowe chroniące przed owadami. Solidna konstrukcja i długa żywotność.</p>
+      </div>
+      <div class="hidden md:flex md:items-center md:justify-center w-48 h-48 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden shadow-md">
+        <img src={getUrl('/images/product-7.png')} alt="Moskitiery" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      <a href={getUrl('/moskitiery-wroclaw')} class="block p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-800 no-underline">
+        <h3 class="text-lg font-semibold text-black mb-2">Moskitiery</h3>
+        <p class="text-gray-800 text-sm">Skuteczna ochrona przed owadami, różne warianty</p>
       </a>
     </div>
   </section>
@@ -50,8 +94,8 @@ import { getUrl } from '../utils/url';
     <ul class="space-y-3 mt-6">
       <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Doświadczenie:</strong> 15+ lat na rynku usług okiennych</li>
       <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Profesjonalizm:</strong> Montaż wykonywany przez doświadczonych fachowców</li>
-      <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Gwarancja:</strong> Kompleksna gwarancja na wykonane prace</li>
-      <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Darmowy pomiar:</strong> Przyjedźemy i doradzmy bez zobowiązań</li>
+      <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Gwarancja:</strong> Kompleksowa gwarancja na wykonane prace</li>
+      <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Darmowy pomiar:</strong> Przyjedziemy i doradzimy bez zobowiązań</li>
       <li class="flex gap-3"><span class="text-primary font-bold">✓</span> <strong>Serwis:</strong> Naprawy, regulacje i wymiana elementów</li>
     </ul>
   </section>

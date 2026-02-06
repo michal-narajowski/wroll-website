@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import ProductServiceSchema from '../components/ProductServiceSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import Gallery from '../components/Gallery.astro';
+import { getUrl } from '../utils/url';
+
+const title = 'Rolety rzymskie Wrocław — elegancka klasyka | WROLL';
+const description = 'Rolety rzymskie we Wrocławiu. Klasyczne i eleganckie zaciemniające rolety. Szeroki wybór tkanin, montaż i serwis WROLL.';
+
+const faqs = [
+  { question: 'Jak działają rolety rzymskie?', answer: 'Rolety rzymskie zwijają się w poziome fałdy — eleganckie, funkcjonalne, zajmują mało miejsca na oknie.' },
+  { question: 'Jakie tkaniny są dostępne?', answer: 'Oferujemy zaciemniające, transparentne i semi-przezroczyste — każda tkanina dopasowana do Twojego stylu wnętrza.' }
+];
+
+const originalImage = getUrl('/images/product-5.png');
+
+const images = [
+  { webp: getUrl('/images/gallery/rolety-rzymskie-1.jpg'), fallback: getUrl('/images/gallery/rolety-rzymskie-1.jpg'), alt: 'Rolety rzymskie - Wykonanie 1' },
+  { webp: getUrl('/images/gallery/rolety-rzymskie-2.jpg'), fallback: getUrl('/images/gallery/rolety-rzymskie-2.jpg'), alt: 'Rolety rzymskie - Wykonanie 2' },
+  { webp: getUrl('/images/gallery/rolety-rzymskie-3.jpg'), fallback: getUrl('/images/gallery/rolety-rzymskie-3.jpg'), alt: 'Instalacja rolet rzymskich' }
+];
+
+---
+<BaseLayout>
+  <SEO title={title} description={description} />
+
+  <div class="py-6">
+    <h1>Rolety rzymskie Wrocław</h1>
+    <p class="text-lg text-gray-700 mb-6">{description}</p>
+  </div>
+
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2>Dlaczego rolety rzymskie?</h2>
+        <ul class="space-y-3 mt-4">
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Elegancki wygląd — klasyka, która nigdy nie wychodzi z mody</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Funkcjonalność — pełna kontrola światła i prywatności</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Wszechstronne — pasują do każdego stylu wnętrza</li>
+          <li class="flex gap-3"><span class="text-black font-bold">✓</span> Łatwe utrzymanie — proste w czyszczeniu i konserwacji</li>
+        </ul>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src={originalImage} alt="Rolety rzymskie - Realizacja" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Nasze usługi</h2>
+    <p class="text-gray-700 mb-6">Produkcja i montaż rolet rzymskich na wymiar — do mieszkań, biur, hoteli i restauracji. Oferujemy naprawy, wymianę tkanin i pełny serwis. Każda roleta jest wykonana indywidualnie.</p>
+    <a href={getUrl('/kontakt')} class="btn">Zamów bezpłatny pomiar</a>
+  </section>
+
+  <section class="section">
+    <h2>Tkaniny do rolet rzymskich</h2>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Zaciemniające</h3>
+        <p class="text-sm text-gray-700">Blokują większość światła — idealne do sypialni i pomieszczeń, gdzie potrzebna jest prywatność.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Transparentne</h3>
+        <p class="text-sm text-gray-700">Przepuszczają światło — świetne do salonów, kuchni i pomieszczeń, gdzie chcesz zachować widok.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Semi-przezroczyste</h3>
+        <p class="text-sm text-gray-700">Łagodzą światło — balans między prywatnością a dostępem światła naturalnego.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-800">
+        <h3 class="font-semibold text-black mb-2">Premium</h3>
+        <p class="text-sm text-gray-700">Wysokiej jakości tkaniny importowane — wytrzymałe i piękne przez wiele lat.</p>
+      </div>
+    </div>
+  </section>
+
+  <Gallery images={images} />
+
+  <section class="section">
+    <h2 class="mb-6">Najczęściej zadawane pytania</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+          <p class="text-gray-700">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSchema faqs={faqs} />
+  <ProductServiceSchema name="Rolety rzymskie" description={description} images={images.map(i=>i.webp)} priceRange="od 220" />
+</BaseLayout>
